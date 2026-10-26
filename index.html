@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Danily Trader — Danial Darabi</title>
+  <meta name="description" content="Danily Trader: a private trading assistant built and used by Danial Darabi for his own accounts.">
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #1d2228;
+      --muted: #5b6573;
+      --card: #f4f6f8;
+      --line: #dfe3e8;
+      --accent: #b8860b;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #14171b;
+        --text: #e6e9ed;
+        --muted: #9aa4b1;
+        --card: #1d2228;
+        --line: #2c333b;
+        --accent: #e0b84c;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+    main { max-width: 720px; margin: 0 auto; padding: 48px 16px 64px; }
+    header { border-bottom: 1px solid var(--line); padding-bottom: 24px; margin-bottom: 32px; }
+    .badge {
+      display: inline-block; font-size: 13px; letter-spacing: .04em; text-transform: uppercase;
+      color: var(--accent); border: 1px solid var(--accent); border-radius: 999px; padding: 2px 10px;
+    }
+    h1 { font-size: 34px; line-height: 1.2; margin: 14px 0 8px; }
+    h2 { font-size: 20px; margin: 36px 0 12px; }
+    p { margin: 0 0 14px; }
+    .lead { font-size: 19px; color: var(--muted); }
+    ol, ul { padding-left: 22px; margin: 0 0 14px; }
+    li { margin-bottom: 8px; }
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; }
+    .muted { color: var(--muted); font-size: 15px; }
+    a { color: var(--accent); }
+    footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--line); }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <span class="badge">Private project</span>
+    <h1>Danily Trader</h1>
+    <p class="lead">A private trading assistant, built and operated by Danial Darabi for his own trading accounts.</p>
+  </header>
+
+  <section>
+    <p>
+      Danily Trader is a personal software tool. It helps me follow gold (XAUUSD) trade ideas from signal
+      channels I subscribe to, and trades them on my own broker accounts with strict, fixed risk rules.
+      It is not a public service and it is not offered to other people. It does not manage anyone else's money.
+    </p>
+  </section>
+
+  <section>
+    <h2>What it does</h2>
+    <ol>
+      <li>Reads new trade ideas for gold (XAUUSD), and their later updates, from signal channels I follow.</li>
+      <li>Turns each message into a structured order proposal: direction, entry zone, stop loss and take profits.</li>
+      <li>Checks every proposal against fixed rules before anything is sent: a stop loss is required,
+          the entry must be close to the current price, and the position size comes from a fixed risk percentage.</li>
+      <li>Places, modifies and closes orders on my own demo and live accounts through the cTrader Open API.</li>
+      <li>Sends me a short report of every opened and closed trade, and a daily summary of results.</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Safety rules</h2>
+    <div class="card">
+      <ul>
+        <li>Every new strategy runs on a <strong>demo account first</strong>; live trading needs a separate, explicit switch.</li>
+        <li>No order is ever placed without a stop loss.</li>
+        <li>Hard limits on position size, number of open trades and daily loss.</li>
+        <li>Only my own accounts are used. Access can be revoked at any time.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Contact</h2>
+    <p>Danial Darabi — <a href="https://github.com/drdanial97">github.com/drdanial97</a></p>
+  </section>
+
+  <footer>
+    <p class="muted">
+      Personal project, not financial advice. Trading leveraged products such as CFDs carries a high risk of losing money.
+      cTrader is a trademark of Spotware Systems Ltd.; this project is not affiliated with or endorsed by Spotware.
+    </p>
+  </footer>
+</main>
+</body>
+</html>
